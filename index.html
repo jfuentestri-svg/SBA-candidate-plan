@@ -1,0 +1,947 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Juan Pablo Fuentes — LL.M. SBA Representative Campaign Platform (TAMU Law)" />
+  <title>Juan Pablo Fuentes | LL.M. SBA Representative</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Flyer-derived palette */
+      --maroon: #7A0101;      /* deep maroon */
+      --maroon-2: #8E0A0A;    /* accent maroon */
+      --navy: #0F203E;        /* dark navy */
+      --slate: #3F4656;       /* dark gray-blue */
+      --ink: #0B1020;         /* near-black */
+      --bg: #F6F7FA;          /* soft near-white */
+      --panel: #FFFFFF;
+      --muted: #D8D6D6;       /* light gray from flyer */
+      --border: rgba(15,32,62,.14);
+      --shadow: 0 12px 30px rgba(11,16,32,.10);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+    a{color:inherit}
+    .wrap{max-width: var(--max); margin: 0 auto; padding: 0 20px;}
+    .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip:focus{left:16px;top:16px;width:auto;height:auto;background:#fff;padding:10px 12px;border-radius:10px;box-shadow:var(--shadow);z-index:9999}
+
+    /* Top ribbon (election date) */
+    .ribbon{
+      background: linear-gradient(90deg, var(--navy), var(--maroon));
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: .2px;
+      font-size: 14px;
+    }
+    .ribbon .wrap{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding: 10px 20px;
+    }
+    .ribbon strong{font-weight:800}
+    .ribbon .mini{opacity:.92; font-weight:600}
+
+    /* Nav */
+    .nav{
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(246,247,250,.86);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav .wrap{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding: 12px 20px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; text-decoration:none;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+    .mark{
+      width: 34px; height: 34px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--maroon), var(--navy));
+      box-shadow: 0 10px 22px rgba(15,32,62,.18);
+    }
+    .navlinks{
+      display:flex; gap: 12px; flex-wrap: wrap;
+      align-items:center; justify-content:flex-end;
+    }
+    .navlinks a{
+      text-decoration:none;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: rgba(11,16,32,.86);
+      font-weight: 700;
+      font-size: 14px;
+      border: 1px solid transparent;
+    }
+    .navlinks a:hover{
+      border-color: var(--border);
+      background: rgba(255,255,255,.75);
+    }
+    .navlinks .cta{
+      background: var(--maroon);
+      color:#fff;
+      border-color: rgba(255,255,255,.12);
+      box-shadow: 0 10px 24px rgba(122,1,1,.20);
+    }
+    .navlinks .cta:hover{background: var(--maroon-2)}
+
+    /* Hero */
+    .hero{
+      position: relative;
+      overflow: hidden;
+      background: var(--navy);
+      color: #fff;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image:
+        linear-gradient(90deg, rgba(15,32,62,.84) 0%, rgba(15,32,62,.68) 45%, rgba(122,1,1,.50) 100%),
+        url("https://upload.wikimedia.org/wikipedia/commons/7/7d/Fort_Worth_Skyline_2025_%28cropped%29.jpg");
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+      filter: saturate(1.05);
+    }
+    .hero::after{
+      content:"";
+      position:absolute; inset:-60px -80px auto auto;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle at 30% 30%, rgba(216,214,214,.18), rgba(216,214,214,0) 65%);
+      pointer-events:none;
+    }
+    .hero .wrap{
+      position: relative;
+      padding: 70px 20px 52px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items: end;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .2px;
+    }
+    .kicker .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: var(--muted);
+      box-shadow: 0 0 0 6px rgba(216,214,214,.12);
+    }
+    h1{
+      margin: 14px 0 10px;
+      font-size: clamp(34px, 4.2vw, 54px);
+      line-height: 1.08;
+      letter-spacing: -0.8px;
+      font-weight: 900;
+    }
+    .subhead{
+      margin: 0 0 20px;
+      font-size: clamp(16px, 2vw, 18px);
+      opacity: .95;
+      max-width: 62ch;
+    }
+    .hero-actions{
+      display:flex; gap: 12px; flex-wrap: wrap;
+      margin-top: 18px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      border-radius: 14px;
+      padding: 12px 14px;
+      border: 1px solid rgba(255,255,255,.22);
+      text-decoration:none;
+      font-weight: 800;
+      letter-spacing: .1px;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      will-change: transform;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .btn.primary{
+      background: var(--maroon);
+      border-color: rgba(255,255,255,.10);
+      box-shadow: 0 14px 30px rgba(122,1,1,.26);
+      color:#fff;
+    }
+    .btn.primary:hover{background: var(--maroon-2)}
+    .btn.ghost{
+      background: rgba(255,255,255,.08);
+      color:#fff;
+    }
+    .hero-card{
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      box-shadow: 0 18px 40px rgba(0,0,0,.18);
+    }
+    .hero-card h2{
+      margin: 0 0 6px;
+      font-size: 18px;
+      letter-spacing: -.2px;
+    }
+    .hero-card p{margin:0; opacity:.95; font-size: 14px}
+    .hero-card .tagline{
+      margin-top: 10px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .pill{
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.96);
+    }
+
+    /* Sections */
+    section{padding: 52px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px; flex-wrap:wrap;
+      margin-bottom: 18px;
+    }
+    .section-title h3{
+      margin:0;
+      font-size: 28px;
+      letter-spacing: -0.4px;
+      font-weight: 900;
+      color: var(--navy);
+    }
+    .section-title p{
+      margin:0;
+      max-width: 70ch;
+      color: rgba(11,16,32,.78);
+      font-weight: 600;
+    }
+
+    /* Cards + details */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+    .card{
+      grid-column: span 6;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: 0 8px 22px rgba(11,16,32,.06);
+    }
+    .card.wide{grid-column: span 12}
+    .card .head{
+      display:flex; gap:12px; align-items:flex-start;
+      justify-content:space-between;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:10px;
+      font-weight: 900;
+      letter-spacing: .15px;
+      font-size: 14px;
+      color: var(--navy);
+    }
+    .badge .num{
+      width: 30px; height: 30px; border-radius: 12px;
+      display:inline-flex; align-items:center; justify-content:center;
+      background: rgba(122,1,1,.10);
+      color: var(--maroon);
+      border: 1px solid rgba(122,1,1,.18);
+      flex: 0 0 auto;
+    }
+    .card .desc{
+      margin: 10px 0 0;
+      color: rgba(11,16,32,.80);
+      font-weight: 600;
+    }
+    details{
+      margin-top: 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: rgba(246,247,250,.55);
+      overflow:hidden;
+    }
+    summary{
+      cursor:pointer;
+      list-style:none;
+      padding: 12px 14px;
+      font-weight: 900;
+      color: var(--navy);
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary .chev{
+      width: 22px; height: 22px; border-radius: 9px;
+      display:inline-flex; align-items:center; justify-content:center;
+      background: rgba(15,32,62,.10);
+      border: 1px solid rgba(15,32,62,.14);
+      flex: 0 0 auto;
+    }
+    details[open] summary{background: rgba(15,32,62,.06)}
+    .detail-body{
+      padding: 12px 14px 14px;
+      border-top: 1px solid var(--border);
+    }
+    .split{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .callout{
+      border-radius: 14px;
+      padding: 12px 12px;
+      border: 1px solid rgba(15,32,62,.12);
+      background: #fff;
+    }
+    .callout h4{
+      margin: 0 0 6px;
+      font-size: 13px;
+      letter-spacing: .2px;
+      text-transform: uppercase;
+      color: rgba(15,32,62,.78);
+    }
+    ul{margin: 0; padding-left: 18px}
+    li{margin: 6px 0; color: rgba(11,16,32,.85); font-weight: 600}
+
+    /* Evidence + survey */
+    .evidence{
+      background: linear-gradient(180deg, rgba(216,214,214,.22), rgba(246,247,250,0));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .evidence .card{
+      background: linear-gradient(180deg, #fff, rgba(246,247,250,.75));
+    }
+    .links{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .link{
+      grid-column: span 6;
+      text-decoration:none;
+      background:#fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px 12px;
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+      box-shadow: 0 8px 20px rgba(11,16,32,.05);
+    }
+    .link strong{display:block; font-weight: 900; color: var(--navy)}
+    .link span{display:block; margin-top: 3px; color: rgba(11,16,32,.74); font-weight: 600; font-size: 13px}
+    .link .ico{
+      width: 34px; height: 34px; border-radius: 14px;
+      background: rgba(122,1,1,.10);
+      border: 1px solid rgba(122,1,1,.16);
+      flex: 0 0 auto;
+      display:flex; align-items:center; justify-content:center;
+      color: var(--maroon);
+      font-weight: 900;
+    }
+
+    .survey-panel{
+      background: linear-gradient(135deg, rgba(122,1,1,.10), rgba(15,32,62,.06));
+      border: 1px solid rgba(15,32,62,.14);
+      border-radius: var(--radius);
+      padding: 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 12px;
+      flex-wrap:wrap;
+    }
+    .survey-panel h3{
+      margin: 0 0 6px;
+      color: var(--navy);
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: -.2px;
+    }
+    .survey-panel p{
+      margin: 0;
+      color: rgba(11,16,32,.78);
+      font-weight: 600;
+      max-width: 75ch;
+    }
+
+    /* Footer */
+    footer{
+      background: var(--navy);
+      color: rgba(255,255,255,.92);
+      padding: 28px 0;
+      border-top: 4px solid var(--maroon);
+    }
+    footer .wrap{
+      display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
+      align-items:flex-start;
+    }
+    footer a{color:#fff}
+    footer .small{font-size: 12px; opacity:.9; font-weight: 600; max-width: 92ch}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero .wrap{grid-template-columns: 1fr; padding-top: 56px}
+      .card{grid-column: span 12}
+      .split{grid-template-columns: 1fr}
+      .link{grid-column: span 12}
+    }
+    @media (prefers-reduced-motion: reduce){
+      .btn{transition:none}
+      .hero::before{transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip" href="#platform">Skip to platform</a>
+
+  <div class="ribbon">
+    <div class="wrap">
+      <div><strong>VOTING</strong> — Jan 23</div>
+      <div class="mini">LL.M. SBA Representative</div>
+    </div>
+  </div>
+
+  <header class="nav" role="navigation" aria-label="Primary">
+    <div class="wrap">
+      <a class="brand" href="#top">
+        <span class="mark" aria-hidden="true"></span>
+        <span>JUAN PABLO FUENTES</span>
+      </a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#platform">Platform</a>
+        <a href="#evidence">Proof</a>
+        <a href="#survey" class="cta">Survey</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Hero">
+      <div class="wrap">
+        <div>
+          <div class="kicker"><span class="dot" aria-hidden="true"></span> FOR LL.M. SBA REPRESENTATIVE</div>
+          <h1>Actions Speak Louder Than Words.</h1>
+          <p class="subhead">
+            A practical platform to integrate LL.M. and J.D. students, strengthen bar readiness,
+            and turn global experience into real career outcomes — with deliverables that can be executed now,
+            and seeds that future representatives can finish.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#platform">View the Platform</a>
+            <a class="btn ghost" href="#survey">Students Heard — Take the Survey</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Campaign highlights">
+          <h2>What this platform delivers</h2>
+          <p>Clear priorities, realistic execution, and measurable progress within one term.</p>
+          <div class="tagline" aria-label="Key themes">
+            <span class="pill">LL.M.–J.D. Integration</span>
+            <span class="pill">Bar Roadmap</span>
+            <span class="pill">Employer Access</span>
+            <span class="pill">Visa Clarity</span>
+            <span class="pill">Aggie Network</span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" aria-label="About">
+      <div class="wrap">
+        <div class="section-title">
+          <h3>About</h3>
+          <p>
+            This campaign is built on a simple reality: one-year, in-person LL.M. students should leave TAMU Law
+            with real relationships, real guidance, and real access — not just good intentions.
+          </p>
+        </div>
+
+        <div class="card wide">
+          <p class="desc" style="margin:0">
+            The goal is not to reinvent the school. The goal is to close the gaps that LL.M. students face:
+            integration, bar readiness, interviewing and hiring, immigration clarity, and a clear path to use the Aggie Network.
+            This platform is designed to deliver immediate wins and build a route that future representatives can continue.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="platform" aria-label="Platform">
+      <div class="wrap">
+        <div class="section-title">
+          <h3>Platform</h3>
+          <p>
+            Each pillar includes actions that can be delivered now and institutional seeds that build durable change.
+          </p>
+        </div>
+
+        <div class="grid">
+          <!-- 1 -->
+          <div class="card">
+            <div class="head">
+              <div class="badge"><span class="num">1</span> Networking & LL.M.–J.D. Integration</div>
+            </div>
+            <p class="desc">
+              LL.M. value is wasted when connections stay inside one classroom. Integration must be engineered.
+            </p>
+
+            <details>
+              <summary>
+                What will be done
+                <span class="chev" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="detail-body">
+                <div class="split">
+                  <div class="callout">
+                    <h4>Deliver this term</h4>
+                    <ul>
+                      <li>“Aggie Introductions” mixers that pair LL.M. + J.D. students in short rotations.</li>
+                      <li>LL.M.–J.D. mentorship matchmaking (opt-in) focused on class integration and professional introductions.</li>
+                      <li>Global Expertise Registry: a simple directory of LL.M. jurisdictions and strengths for students and alumni.</li>
+                    </ul>
+                  </div>
+                  <div class="callout">
+                    <h4>Seed for continuity</h4>
+                    <ul>
+                      <li>Co-sponsored events between LL.M. community and existing student orgs (journals, advocacy teams, affinity groups).</li>
+                      <li>Recurring calendar slots so integration events become institutional, not occasional.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- 2 -->
+          <div class="card">
+            <div class="head">
+              <div class="badge"><span class="num">2</span> Bar Readiness & Transparent Roadmap</div>
+            </div>
+            <p class="desc">
+              The bar is hard enough. The bigger problem is uncertainty and lack of a tested LL.M. playbook.
+            </p>
+
+            <details>
+              <summary>
+                What will be done
+                <span class="chev" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="detail-body">
+                <div class="split">
+                  <div class="callout">
+                    <h4>Deliver this term</h4>
+                    <ul>
+                      <li>Publish a “Texas Bar Roadmap” timeline: course planning, deadlines, and study milestones.</li>
+                      <li>Peer-led bar accountability groups (weekly) to build discipline and reduce isolation.</li>
+                      <li>Alumni playbooks: short, anonymized “what worked” bar prep strategies from recent LL.M. passers.</li>
+                    </ul>
+                  </div>
+                  <div class="callout">
+                    <h4>Seed for continuity</h4>
+                    <ul>
+                      <li>Formal proposal for an optional LL.M. bar-support track (pilot model; requires collaboration).</li>
+                      <li>Annual data collection: survey-based bar outcomes for transparency and planning.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- 3 -->
+          <div class="card">
+            <div class="head">
+              <div class="badge"><span class="num">3</span> Professional Brand & Employer Access</div>
+            </div>
+            <p class="desc">
+              LL.M. candidates must convert foreign training into a U.S.-market story: value, proof, and fit.
+            </p>
+
+            <details>
+              <summary>
+                What will be done
+                <span class="chev" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="detail-body">
+                <div class="split">
+                  <div class="callout">
+                    <h4>Deliver this term</h4>
+                    <ul>
+                      <li>Resume and LinkedIn templates built for foreign-trained lawyers and U.S. screening logic.</li>
+                      <li>Employer panel: firms and in-house counsel who actually hire international profiles.</li>
+                      <li>“Global Advantage” messaging guide: how to sell bilingualism, cross-border expertise, and civil-law fluency.</li>
+                    </ul>
+                  </div>
+                  <div class="callout">
+                    <h4>Seed for continuity</h4>
+                    <ul>
+                      <li>Pilot an “International Talent Highlight” for the next recruitment cycle (with Career Services).</li>
+                      <li>Create repeatable employer relationships tied to DFW, Houston, and Texas industry needs.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- 4 -->
+          <div class="card">
+            <div class="head">
+              <div class="badge"><span class="num">4</span> Interview Prep That Matches Reality</div>
+            </div>
+            <p class="desc">
+              LL.M. interviews are different. Prep should reflect the actual questions international candidates face.
+            </p>
+
+            <details>
+              <summary>
+                What will be done
+                <span class="chev" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="detail-body">
+                <div class="split">
+                  <div class="callout">
+                    <h4>Deliver this term</h4>
+                    <ul>
+                      <li>Mock interviews with alumni and practicing attorneys who have interviewed international candidates.</li>
+                      <li>Question bank: “Tell me about your jurisdiction,” “Why U.S.?,” “Visa timeline,” “Writing sample expectations.”</li>
+                      <li>Short workshops: how to answer with U.S. structure (STAR/IRAC), not home-country style.</li>
+                    </ul>
+                  </div>
+                  <div class="callout">
+                    <h4>Seed for continuity</h4>
+                    <ul>
+                      <li>Formal proposal for a recurring LL.M. mock-interview module within existing Career Services programming.</li>
+                      <li>Build a rotating volunteer roster of alumni interviewers.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- 5 -->
+          <div class="card">
+            <div class="head">
+              <div class="badge"><span class="num">5</span> Visa Clarity (CPT/OPT and Beyond)</div>
+            </div>
+            <p class="desc">
+              Confusion about work authorization creates paralysis. Clarity creates action and earlier planning.
+            </p>
+
+            <details>
+              <summary>
+                What will be done
+                <span class="chev" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="detail-body">
+                <div class="split">
+                  <div class="callout">
+                    <h4>Deliver this term</h4>
+                    <ul>
+                      <li>Publish an LL.M. Immigration Guide (plain-English flowcharts for CPT/OPT timelines).</li>
+                      <li>Host a Q&A session with an immigration attorney focused on law-student scenarios.</li>
+                      <li>Create a “visa questions for employers” script so interviews become clean and confident.</li>
+                    </ul>
+                  </div>
+                  <div class="callout">
+                    <h4>Seed for continuity</h4>
+                    <ul>
+                      <li>Coordinate recurring sessions each semester with updated timelines and common pitfalls.</li>
+                      <li>Build an FAQ archive so each incoming class starts ahead.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- 6 -->
+          <div class="card">
+            <div class="head">
+              <div class="badge"><span class="num">6</span> Activate the Aggie Network for Global Practice</div>
+            </div>
+            <p class="desc">
+              The Aggie Network is a competitive advantage — but it must be operational, not symbolic.
+            </p>
+
+            <details>
+              <summary>
+                What will be done
+                <span class="chev" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="detail-body">
+                <div class="split">
+                  <div class="callout">
+                    <h4>Deliver this term</h4>
+                    <ul>
+                      <li>Alumni “warm intro” nights (DFW + Houston) specifically for LL.M. career outcomes.</li>
+                      <li>Volunteer alumni directory: practice areas + willingness to review resumes or do mock interviews.</li>
+                      <li>Monthly “Global Practice Spotlight” featuring an alumnus using cross-border expertise.</li>
+                    </ul>
+                  </div>
+                  <div class="callout">
+                    <h4>Seed for continuity</h4>
+                    <ul>
+                      <li>Create an annual routine of alumni events and mentorship sign-ups for each incoming class.</li>
+                      <li>Build partnerships with alumni chapters for sustained programming.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- 7 -->
+          <div class="card wide">
+            <div class="head">
+              <div class="badge"><span class="num">7</span> Marketable Focus in a General LL.M. (Without Pretending It’s a JD)</div>
+            </div>
+            <p class="desc">
+              “General” must still look strategic. Employers hire for capability and signal — not just a degree title.
+            </p>
+
+            <details>
+              <summary>
+                What will be done
+                <span class="chev" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="detail-body">
+                <div class="split">
+                  <div class="callout">
+                    <h4>Deliver this term</h4>
+                    <ul>
+                      <li>“Focus paths” that package course selection into employer-readable lanes (e.g., business/compliance, litigation, IP, energy).</li>
+                      <li>Portfolio checklist: writing samples, short publications, and practical proof of skills (not just classes).</li>
+                      <li>Introduce a simple “skills badge” concept that highlights concrete competencies (drafting, compliance, tax, contracts).</li>
+                    </ul>
+                  </div>
+                  <div class="callout">
+                    <h4>Seed for continuity</h4>
+                    <ul>
+                      <li>Formal proposal for faculty-backed micro-credentials or certificates aligned with Texas market demand.</li>
+                      <li>Continue building employer pipelines that match those focus paths.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- 8 Voting rights -->
+          <div class="card wide">
+            <div class="head">
+              <div class="badge"><span class="num">8</span> Equal Voice: Voting Rights for LL.M. Representatives in the SBA</div>
+            </div>
+            <p class="desc">
+              Representation without voting power is not representation. LL.M. students should have a vote on
+              procedural and substantive SBA matters.
+            </p>
+
+            <details>
+              <summary>
+                What will be done
+                <span class="chev" aria-hidden="true">⌄</span>
+              </summary>
+              <div class="detail-body">
+                <div class="split">
+                  <div class="callout">
+                    <h4>Deliver this term</h4>
+                    <ul>
+                      <li>Initiate a formal SBA task force to draft and propose an amendment granting LL.M. reps voting power on all SBA matters.</li>
+                      <li>Publish a clear amendment roadmap: drafting, stakeholder support, vote process, and timeline.</li>
+                      <li>Build coalition support across JD sections by showing mutual benefit: stronger global networking and employer reach.</li>
+                    </ul>
+                  </div>
+                  <div class="callout">
+                    <h4>Proof it’s feasible elsewhere</h4>
+                    <ul>
+                      <li>Harvard Law’s Student Government includes elected LL.M. representatives and gives each representative a vote on all substantive and procedural matters.</li>
+                      <li>Peer programs demonstrate that LL.M. governance inclusion improves engagement and outcomes.</li>
+                    </ul>
+                    <p style="margin:10px 0 0; font-weight:700; color:rgba(11,16,32,.75); font-size:13px">
+                      Source link in “Proof” section below.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- 9 Survey pillar (final) -->
+          <div class="card wide" id="survey" aria-label="Survey">
+            <div class="head">
+              <div class="badge"><span class="num">9</span> Students heard: your proposals count</div>
+            </div>
+            <p class="desc">
+              If it matters to LL.M. students, it belongs on the agenda. Submit your priorities and proposals through the survey.
+            </p>
+
+            <div class="survey-panel">
+              <div>
+                <h3>Let’s Create a Pillar</h3>
+                <p>
+                  Your voice builds the platform. Share what should be fixed, created, or improved for LL.M. students and the wider TAMU Law community.
+                </p>
+              </div>
+              <a class="btn primary"
+                 href="https://docs.google.com/forms/d/e/1FAIpQLScBrXVgcmpd2pmKy8blOSA-8r5FxTxABRB3jFcUgucjRktMew/viewform?usp=sharing&ouid=110878852432562117605"
+                 target="_blank" rel="noopener noreferrer">
+                Fill the Survey
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="evidence" class="evidence" aria-label="Evidence">
+      <div class="wrap">
+        <div class="section-title">
+          <h3>Proof: Models That Already Work</h3>
+          <p>
+            This platform is built on approaches that peer law schools already run successfully — adapted to TAMU Law’s culture and calendar.
+          </p>
+        </div>
+
+        <div class="card wide">
+          <p class="desc" style="margin:0">
+            LL.M. success is not mysterious. The difference is structure: targeted mentoring, bar-aligned practice,
+            employer access for foreign-trained candidates, and real voting representation in student governance.
+          </p>
+
+          <div class="links" aria-label="Evidence links">
+            <a class="link" href="https://case.edu/law/student-life/international-students" target="_blank" rel="noopener noreferrer">
+              <div class="ico" aria-hidden="true">1</div>
+              <div>
+                <strong>Case Western: JD mentors for LL.M. community</strong>
+                <span>Student mentors run LL.M. events and help integration into JD classes and professional life.</span>
+              </div>
+            </a>
+
+            <a class="link" href="https://www.lls.edu/llm/bartrackllm/" target="_blank" rel="noopener noreferrer">
+              <div class="ico" aria-hidden="true">2</div>
+              <div>
+                <strong>Loyola: Bar Track LL.M. (practice from day one)</strong>
+                <span>Structured bar practice and the option to cover more bar-tested subjects.</span>
+              </div>
+            </a>
+
+            <a class="link" href="https://www.law.nyu.edu/isip" target="_blank" rel="noopener noreferrer">
+              <div class="ico" aria-hidden="true">3</div>
+              <div>
+                <strong>NYU: ISIP — LL.M. recruiting program</strong>
+                <span>National consortium recruiting with 150+ employers participating regularly.</span>
+              </div>
+            </a>
+
+            <a class="link" href="https://www.lawschool.cornell.edu/careers/career-services-for-students/ll-m-career-advising/" target="_blank" rel="noopener noreferrer">
+              <div class="ico" aria-hidden="true">4</div>
+              <div>
+                <strong>Cornell: dedicated LL.M. career advising and ISIP co-sponsorship</strong>
+                <span>LL.M.-specific career guidance and structured access to international employers.</span>
+              </div>
+            </a>
+
+            <a class="link" href="https://www.smu.edu/law/career-services/employers/offcampusjobfairs" target="_blank" rel="noopener noreferrer">
+              <div class="ico" aria-hidden="true">5</div>
+              <div>
+                <strong>SMU: off-campus job fairs include international LL.M. interview programs</strong>
+                <span>A regional example of structured access to specialized recruiting programs.</span>
+              </div>
+            </a>
+
+            <a class="link" href="https://orgs.law.harvard.edu/studentgovernment/files/2022/03/3.25.22-Constitution.pdf" target="_blank" rel="noopener noreferrer">
+              <div class="ico" aria-hidden="true">6</div>
+              <div>
+                <strong>Harvard: LL.M. representatives with votes on all matters</strong>
+                <span>Student Government constitution provides LL.M. reps and voting on substantive and procedural matters.</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" aria-label="Contact">
+      <div class="wrap">
+        <div class="section-title">
+          <h3>Contact</h3>
+          <p>Questions, proposals, or support — reach out directly.</p>
+        </div>
+
+        <div class="card wide">
+          <p class="desc" style="margin:0">
+            Email: <a href="mailto:jp.fuentes22@tamu.edu"><strong>jp.fuentes22@tamu.edu</strong></a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer aria-label="Footer">
+    <div class="wrap">
+      <div>
+        <strong>Juan Pablo Fuentes</strong><br/>
+        <span class="small">LL.M. SBA Representative Campaign</span>
+      </div>
+      <div class="small">
+        Skyline image: “Fort Worth Skyline 2025 (cropped)” (CC BY 4.0), via Wikimedia Commons.<br/>
+        © 2026
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for in-page anchors (no external libraries)
+    (function () {
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          const id = a.getAttribute('href');
+          if (!id || id === '#') return;
+          const el = document.querySelector(id);
+          if (!el) return;
+          e.preventDefault();
+          el.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth', block: 'start' });
+          history.pushState(null, '', id);
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
